@@ -39,8 +39,10 @@
 
 	<nav>
 		<ul>
-			<li><a href="/about.view.php">About page</a></li>
-			<li><a href="/contact.view.php">Contact page</a></li>
+			<li><a href="/">Home page</a></li>
+			<li><a href="/about">About page</a></li>
+			<li><a href="/about/culture">About Culture page</a></li>
+			<li><a href="/contact">Contact page</a></li>
 		</ul>
 	</nav>
 

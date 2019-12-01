@@ -1,6 +1,6 @@
 <?php
 
 
-$tasks = $database->fetchAll('todos');
+$tasks = $app['database']->fetchAll('todos');
 
 require "views/index.view.php";
