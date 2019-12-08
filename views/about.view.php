@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>about us</title>
-</head>
-<body>
+<?php require('partials/head.php'); ?>
+
+<header>
     <h1>About Us</h1>
-</body>
-</html>
+</header>
+
+<?php require('partials/footer.php'); ?>

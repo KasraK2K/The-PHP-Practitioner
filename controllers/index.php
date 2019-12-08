@@ -1,6 +1,8 @@
 <?php
 
 
-$tasks = $app['database']->fetchAll('todos');
+$title = "home page";
+
+$tasks = $app['database']->selectAll('todos');
 
 require "views/index.view.php";

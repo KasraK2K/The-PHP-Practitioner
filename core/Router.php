@@ -4,10 +4,12 @@
 class Router
 
 {
-    protected $routes = [];
+    protected $routes = [
+        'GET'   => [],
+        'POST'  => []
+    ];
 
     public static function load($file)
-
     {
         $router = new static;
 
@@ -17,18 +19,22 @@ class Router
     }
 
 
-    public function define($routes)
-
+    public function get($uri, $controller)
     {
-        $this->routes = $routes; // faghat dare arayei az route haro migire ta betoone toosh search kone
+        $this->routes['GET'][$uri] = $controller;
     }
-
-
-    public function direct($uri)
-
+    
+    
+    public function post($uri, $controller)
     {
-        if ( array_key_exists($uri, $this->routes) ) {
-            return $this->routes[$uri]; // migarde age to araye key($uri) vojood dash meghdaresho return kone
+        $this->routes['POST'][$uri] = $controller;
+    }
+    
+
+    public function direct($uri, $requestType)
+    {
+        if ( array_key_exists($uri, $this->routes[$requestType]) ) {
+            return $this->routes[$requestType][$uri]; // migarde age to araye key($uri) vojood dash meghdaresho return kone
         }
 
         throw new Exception('No route defined for this URI.');

@@ -1,67 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php require('partials/head.php'); ?>
 
-<head>
-	<meta charset="UTF-8">
-	<title>The PHP Practitioner</title>
+<header>
+	<h1>Home</h1>
+</header>
 
-	<style type="text/css">
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-		}
+<ul>
+	<?php foreach ($tasks as $task) : ?>
+		
+	<li>
+		
+	<?php if ($task->completed) : ?>
+		<strike><?= $task->description; ?></strike>
+	<?php else : ?>
+		<?= $task->description; ?>
+		<?php endif; ?>
+		
+	</li>
+	
+	<?php endforeach; ?>
+</ul>
 
-		body {
-			background-color: #455a64;
-			color: #eeeeee;
-		}
+<h1>write your name</h1>
 
-		header {
-			background: #263238;
-			padding: 2rem;
-			text-align: center;
-			text-shadow: 0 0 3px rgba(0, 0, 0, .25);
-		}
-
-		.white {
-			color: #ff3d00;
-		}
-	</style>
-
-</head>
-
-<body>
-
-	<header>
-		<h1 class="white"><?= "Hello, Kasra."  ?></h1>
-	</header>
-
-	<nav>
-		<ul>
-			<li><a href="/">Home page</a></li>
-			<li><a href="/about">About page</a></li>
-			<li><a href="/about/culture">About Culture page</a></li>
-			<li><a href="/contact">Contact page</a></li>
-		</ul>
-	</nav>
-
-	<ul>
-		<?php foreach ($tasks as $task) : ?>
-
-			<li>
-
-				<?php if ($task->completed) : ?>
-					<strike><?= $task->description; ?></strike>
-				<?php else : ?>
-					<?= $task->description; ?>
-				<?php endif; ?>
-
-			</li>
-
-		<?php endforeach; ?>
-	</ul>
-
-</body>
-
-</html>
+<form action="/name" method="POST">
+	<input type="text" name="name">
+	<button type="submit">submit</button>
+</form>
+			
+			
+<?php require('partials/footer.php'); ?>

@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #455a64;
+    color: #eeeeee;
+}
+
+header {
+    background: #263238;
+    padding: 2rem;
+    text-align: center;
+    text-shadow: 0 0 3px rgba(0, 0, 0, .25);
+}
+
+ul.menu {
+    position: absolute;
+    /* display: inline-block; */
+    top: 0;
+    left: 0;
+    list-style: none;
+}
+
+ul.menu li {
+    padding: 15px;
+    display: inline-block
+}
+
+ul.menu li a {
+    color: #ff3d00;
+    text-decoration: none;
+}
